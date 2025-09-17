@@ -8,6 +8,7 @@ import DepartamentoGet from './DepartamentoGet'
 import EmpleadoGet from './EmpleadoGet'
 import EmpresaGet from './EmpresaGet'
 import Nav from "./Nav";
+import ActualizarEmpleado from "./ActualizarEmpleado";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/creardepartamento" element={<CrearDepartamento></CrearDepartamento>}></Route>
             <Route path="/empleado" element={<EmpleadoGet></EmpleadoGet>}></Route>
             <Route path="/crearempleado" element={<CrearEmpleado></CrearEmpleado>}></Route>
+            <Route path="/empleado/actualizar/:idemp" element={<ActualizarEmpleado></ActualizarEmpleado>}></Route>
           </Routes>
         </BrowserRouter>
 
@@ -34,3 +36,4 @@ function App() {
 }
 
 export default App
+
