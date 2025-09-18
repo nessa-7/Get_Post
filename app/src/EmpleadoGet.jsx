@@ -25,7 +25,7 @@ function EmpleadoGet(){
 
     function Actualizar(id){
         alert(id)
-        navigate(`/empleado/actualizar/${id}`)
+        navigate(`/empleado/${id}`)
     }
 
     async function Eliminar(id){

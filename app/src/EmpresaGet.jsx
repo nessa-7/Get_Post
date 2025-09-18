@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 function EmpresaGet(){
 
     const [empresa,setEmpresa] = useState([])
+    let navigate = useNavigate()
             
         useEffect(() => {
             fetch('https://skojryaxbquqtwvuyhfv.supabase.co/rest/v1/empresa?select=*',{
@@ -15,6 +17,11 @@ function EmpresaGet(){
             .then((data) => setEmpresa(data))
         },[])
         
+    const Actualizar = (id) => {
+        (id)
+        navigate(`/empresa/${id}`)
+    }
+
     return(
         <div>
             <h2>LISTADO EMPRESAS</h2>
@@ -27,6 +34,7 @@ function EmpresaGet(){
                         <th>Direccion</th>
                         <th>Telefono</th>
                         <th>Fecha Creacion</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,6 +47,10 @@ function EmpresaGet(){
                                 <td>{emp.direccion}</td>
                                 <td>{emp.telefono}</td>
                                 <td>{emp.fecha_creacion}</td>
+                                <td>
+                                    <button onClick={()=>Actualizar(emp.id)}>Actualizar</button>
+                                    <button onClick={()=>Eliminar(emp.id)}>Eliminar</button>
+                                </td>
                             </tr>
                         ))
                     }

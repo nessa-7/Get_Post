@@ -9,6 +9,7 @@ import EmpleadoGet from './EmpleadoGet'
 import EmpresaGet from './EmpresaGet'
 import Nav from "./Nav";
 import ActualizarEmpleado from "./ActualizarEmpleado";
+import ActualizarEmpresa from "./ActualizarEmpresa";
 
 function App() {
 
@@ -25,7 +26,8 @@ function App() {
             <Route path="/creardepartamento" element={<CrearDepartamento></CrearDepartamento>}></Route>
             <Route path="/empleado" element={<EmpleadoGet></EmpleadoGet>}></Route>
             <Route path="/crearempleado" element={<CrearEmpleado></CrearEmpleado>}></Route>
-            <Route path="/empleado/actualizar/:idemp" element={<ActualizarEmpleado></ActualizarEmpleado>}></Route>
+            <Route path="/empleado/:idemp" element={<ActualizarEmpleado></ActualizarEmpleado>}></Route>
+            <Route path="/empresa/:idempresa" element={<ActualizarEmpresa></ActualizarEmpresa>}></Route>
           </Routes>
         </BrowserRouter>
 
